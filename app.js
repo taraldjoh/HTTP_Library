@@ -1,24 +1,32 @@
 const http = new easyHTTP();
 
-document.getElementById("button1").addEventListener('click', postUsers);
+document.getElementById("showUser").addEventListener('click', postUsers);
+document.getElementById("remUser").addEventListener('click', remUsers);
 
 // Get Users
 function postUsers() {
   http.get('https://jsonplaceholder.typicode.com/users')
   .then(data => {
-    console.log(data);
     let output = "";
     data.forEach(user => {
-      output += `<p>Full Name: ${user.name}</p>
-      <p>Username: ${user.username}</p>
-      <p>Email: ${user.email}</p>
-      <br>
+      output += `
+      <div class="output-text">
+        <p><b>Full Name:</b> ${user.name}</p>
+        <p><b>Username:</b> ${user.username}</p>
+        <p><b>Email:</b> ${user.email}</p>
+      </div>
+      
       `
     });
     document.getElementById("output").innerHTML = output;
   })
   
   .catch(err => console.log(err));
+}
+
+// Remove users
+function remUsers() {
+  document.getElementById("output").innerHTML = '';
 }
 
 

@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>EasyHTTP Library</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 1rem;
+      }
+
+      #output {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+      }
+
+      .output-text {
+        border: 1px solid #000000;
+        padding: .5rem;
+      }
+    </style>
   </head>
   <body>
-    <button id="button1">Show Users</button>
-    <button id="button2">Button2</button>
-    <button id="button3">Button3</button>
-
+    <div class="container">
+        <button id="showUser">Show Users</button>
+        <button id="remUser">Remove Users</button>
+    </div>
     <br><br>
-
     <div id="output"></div>
     <script src="easyhttp.js"></script>
     <script src="app.js"></script>
